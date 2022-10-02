@@ -1,21 +1,26 @@
 const http = require('http');
+const fs = require('fs')
 
 const hostname = '127.0.0.1';
 const port = 4000;
 
+
+const home = fs.readFileSync("files/Index.html","utf-8");
+const about = fs.readFileSync("files/about.html","utf-8");
+const contact = fs.readFileSync("files/contact.html","utf-8");
 const server = http.createServer((req, res) => {
     if(req.url==="/"){
-        res.end("<h1> This is Home page </h1> ");
+         return res.end(home);
     }
     if(req.url==="/about"){
-        res.end("<h1> This is about page </h1> ");
+        return res.end(about);
     }
     if(req.url==="/contact"){
-        res.end("<h1> This is contact page </h1> ");
+        return res.end(contact);
     }
     else {
 
-        res.end("<h1>404 not Found </h1>")
+        return res.end("<h1>404 not Found </h1>")
     }
     
 });
