@@ -1,11 +1,14 @@
 const http = require('http');
+const fs = require('fs')
 
 const hostname = '127.0.0.1';
 const port = 4000;
 
+
+const home = fs.readFileSync("./Index.html","utf-8");
 const server = http.createServer((req, res) => {
     if(req.url==="/"){
-        res.end("<h1> This is Home page </h1> ");
+        res.end(home);
     }
     if(req.url==="/about"){
         res.end("<h1> This is about page </h1> ");
