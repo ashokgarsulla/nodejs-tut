@@ -1,12 +1,23 @@
 const http = require('http');
 
 const hostname = '127.0.0.1';
-const port = 3000;
+const port = 4000;
 
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
+    if(req.url==="/"){
+        res.end("<h1> This is Home page </h1> ");
+    }
+    if(req.url==="/about"){
+        res.end("<h1> This is about page </h1> ");
+    }
+    if(req.url==="/contact"){
+        res.end("<h1> This is contact page </h1> ");
+    }
+    else {
+
+        res.end("<h1>404 not Found </h1>")
+    }
+    
 });
 
 server.listen(port, hostname, () => {
