@@ -8,17 +8,17 @@ const port = 4000;
 const home = fs.readFileSync("./Index.html","utf-8");
 const server = http.createServer((req, res) => {
     if(req.url==="/"){
-        res.end(home);
+         return res.end(home);
     }
     if(req.url==="/about"){
-        res.end("<h1> This is about page </h1> ");
+        return res.end("<h1> This is about page </h1> ");
     }
     if(req.url==="/contact"){
-        res.end("<h1> This is contact page </h1> ");
+        return res.end("<h1> This is contact page </h1> ");
     }
     else {
 
-        res.end("<h1>404 not Found </h1>")
+        return res.end("<h1>404 not Found </h1>")
     }
     
 });
