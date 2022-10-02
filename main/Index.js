@@ -5,7 +5,7 @@ const hostname = '127.0.0.1';
 const port = 4000;
 
 
-const home = fs.readFileSync("./Index.html","utf-8");
+const home = fs.readFileSync("files/Index.html","utf-8");
 const server = http.createServer((req, res) => {
     if(req.url==="/"){
          return res.end(home);
