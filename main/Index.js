@@ -6,12 +6,13 @@ const port = 4000;
 
 
 const home = fs.readFileSync("files/Index.html","utf-8");
+const about = fs.readFileSync("files/about.html","utf-8");
 const server = http.createServer((req, res) => {
     if(req.url==="/"){
          return res.end(home);
     }
     if(req.url==="/about"){
-        return res.end("<h1> This is about page </h1> ");
+        return res.end(about);
     }
     if(req.url==="/contact"){
         return res.end("<h1> This is contact page </h1> ");
