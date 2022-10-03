@@ -1,4 +1,4 @@
-exports.UserRegister = (req,res)=> {
+const UserRegister = (req,res)=> {
 
     userName = req.body.name;
     userEmail = req.body.email;
@@ -13,3 +13,6 @@ exports.UserRegister = (req,res)=> {
         
     });
 };
+
+
+module.exports = UserRegister;
