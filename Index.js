@@ -10,7 +10,7 @@ const PORT = 4000;
 
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(express.json())
-app.use(router)
+app.use("/api/v1",router)
 
 app.get("/",(req,res)=>{
 
@@ -18,14 +18,7 @@ app.get("/",(req,res)=>{
 
 })
 
-app.get("/api/v1/getdata",(req,res)=> {
-    
-    res.json({
-        name:"Ashok",
-        email:"exapmle@gmail.com",
-        password:"entcrypt"
-    })
-});
+
 
 app.listen(PORT,()=> {
     console.log("Server is working ");
