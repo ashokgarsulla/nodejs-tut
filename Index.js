@@ -26,21 +26,7 @@ app.get("/api/v1/getdata",(req,res)=> {
     })
 })
 
-app.post("/api/v1/register",(req,res)=> {
-
-    userName = req.body.name;
-    userEmail = req.body.email;
-    userPass = req.body.password;
-    
-    res.json({
-        success: true,
-     
-        name: userName,
-        email: userEmail,
-        password: userPass
-        
-    })
-})
+app.post("/api/v1/register")
 
 app.get("/about",(req,res)=>{
 
