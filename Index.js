@@ -11,6 +11,10 @@ app.get("/",(req,res)=>{
 
 })
 
+app.post("/api/v1/login",(req,res)=> {
+    res.send("Form data is sent");
+})
+
 app.get("/about",(req,res)=>{
 
     res.send("<h1>This is about</h1>")
