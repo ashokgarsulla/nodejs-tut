@@ -3,10 +3,13 @@ const path = require("path");
 const bodyParser = require("body-parser");
 
 
+
 const app = express();
 const PORT = 4000;
 
 app.use(bodyParser.urlencoded({extended : false}));
+app.use(express.json())
+
 
 app.get("/",(req,res)=>{
 
@@ -14,11 +17,29 @@ app.get("/",(req,res)=>{
 
 })
 
-app.post("/api/v1/login",(req,res)=> {
-    res.send(`<h1>Hello : ${req.body.name}</h1>
-    <h2>Email: ${req.body.email}</h2>
-    <h2>pass: ${req.body.password}</h2>`);
-    console.log(req.body);
+app.get("/api/v1/getdata",(req,res)=> {
+    
+    res.json({
+        name:"Ashok",
+        email:"exapmle@gmail.com",
+        password:"entcrypt"
+    })
+})
+
+app.post("/api/v1/register",(req,res)=> {
+
+    userName = req.body.name;
+    userEmail = req.body.email;
+    userPass = req.body.password;
+    
+    res.json({
+        success: true,
+     
+        name: userName,
+        email: userEmail,
+        password: userPass
+        
+    })
 })
 
 app.get("/about",(req,res)=>{
