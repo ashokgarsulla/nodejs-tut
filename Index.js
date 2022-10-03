@@ -8,6 +8,7 @@ const app = express();
 const PORT = 4000;
 
 app.use(bodyParser.urlencoded({extended : false}));
+app.use(express.json())
 
 
 app.get("/",(req,res)=>{
@@ -22,6 +23,22 @@ app.get("/api/v1/getdata",(req,res)=> {
         name:"Ashok",
         email:"exapmle@gmail.com",
         password:"entcrypt"
+    })
+})
+
+app.post("/api/v1/register",(req,res)=> {
+
+    userName = req.body.name;
+    userEmail = req.body.email;
+    userPass = req.body.password;
+    
+    res.json({
+        success: true,
+     
+        name: userName,
+        email: userEmail,
+        password: userPass
+        
     })
 })
 
