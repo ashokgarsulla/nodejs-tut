@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 const PORT = 4000;
 
@@ -6,7 +7,8 @@ const PORT = 4000;
 
 app.get("/",(req,res)=>{
 
-    res.send("<h1>This is Get request home</h1>")
+    res.sendFile(path.join(__dirname+"/files/Index.html"));
+
 })
 
 app.get("/about",(req,res)=>{
