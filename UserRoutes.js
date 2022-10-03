@@ -4,6 +4,9 @@ const router = express.Router();
 
 const registerUser = require("./UserController");
 
-router.route("/api/v1/register").post(registerUser);
+router.route("/register").post(registerUser);
+router.route("/login").get(registerUser);
+// router.route("/logout").get(registerUser);
+// router.route("/forgot").get(registerUser);
 
 module.exports = router;
