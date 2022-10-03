@@ -25,24 +25,7 @@ app.get("/api/v1/getdata",(req,res)=> {
         email:"exapmle@gmail.com",
         password:"entcrypt"
     })
-})
-
-app.post("/api/v1/register")
-
-app.get("/about",(req,res)=>{
-
-    res.send("<h1>This is about</h1>")
-})
-
-app.get("/contact",(req,res)=>{
-
-    res.send("<h1>This is Get contact</h1>")
-})
-
-app.get("/service",(req,res)=>{
-
-    res.send("<h1>This is service</h1>")
-})
+});
 
 app.listen(PORT,()=> {
     console.log("Server is working ");
